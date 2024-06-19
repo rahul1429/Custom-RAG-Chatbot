@@ -3,7 +3,7 @@ Basic RAG based chatbot which uses a custom knowledge base to improve the result
 
 * Add all 'text' based files into **data** folder
 * Add 'csv/xlsx' files into **structuredData** folder [Make sure to use the copy of the file]
-* Run `conda create --name <env> --file reqs.txt` to install all required libraries
+* Run `conda create --name <env> --file reqs.txt` to install all required libraries [Having installed **anaconda** or **miniconda** on your PC]
 * To run **csvChat.py** use this `streamlit run csvChat.py`
 * To run **UnstructuredRAG.py** use this `python UnstructuredRAG.py`
 * Provide 'path' to your data at the respective parts of the code.
