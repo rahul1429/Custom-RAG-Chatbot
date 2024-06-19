@@ -35,7 +35,7 @@ def process_image(imagePath):
         imagePath = imagePath.replace("\\", '/')
         image = Image.open(imagePath)
         text = pytesseract.image_to_string(image)
-        with open(f"D:/Projects/Integra/data/image_updated_{(imagePath.split('/')[-1]).split('.')[0]}.txt", "w") as file:
+        with open(f"PATH TO YOUR DATA/image_updated_{(imagePath.split('/')[-1]).split('.')[0]}.txt", "w") as file:
             file.write(text)
         print('image saved successfully')
 
@@ -130,8 +130,8 @@ def main(directory_path, query, chat_history, indexPath):
     print(response)
 
 if __name__ == "__main__":
-    process_images_in_folder("D:/Projects/Integra/images")
-    #process_audio_files_in_folder("D:/Projects/Integra/audio_files", "D:/Projects/Integra/data")
+    process_images_in_folder("PATH TO YOUR IMAGES")
+    process_audio_files_in_folder("PATH TO YOUR AUDIO FILES", "PATH TO YOUR DATA")
     chat_history = []
     exit_keywords = ['Q', 'q', 'exit', 'EXIT', 'quit', 'QUIT']
     while True:
@@ -142,5 +142,5 @@ if __name__ == "__main__":
             break
         else:
             indexPath = 'llama_final.pkl'
-            main("D:/Projects/Integra/data", query, chat_history, indexPath)
+            main("PATH TO YOUR DATA", query, chat_history, indexPath)
 
