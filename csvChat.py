@@ -11,16 +11,17 @@ from langchain_experimental.agents.agent_toolkits import create_csv_agent
 
 from langchain.agents.agent_types import AgentType
 #Add OPEN_API_KEY below
-llm = OpenAI(temperature=0, openai_api_key='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')
+llm = OpenAI(temperature=0, openai_api_key='OPENAI_API_KEY')
 # Define the ChatWithCSVAgent class
 class ChatWithCSVAgent:
     def __init__(self):
         self.agent = create_csv_agent(
             llm,
             #Provide path to your data below
-            "updated_modifData.csv",
+            "PATH TO YOUR CSV",
             verbose=True,
             agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
+            allow_dangerous_code=True,
         )
 
     def run(self, user_input):
@@ -35,7 +36,7 @@ def main():
         st.session_state["chat_history"] = []
         st.write("App refreshed!")
 
-    file = 'updated_modifData.csv'
+    file = 'PATH TO YOUR CSV'
     #file = st.file_uploader("Upload your csv file", type=["csv"])
     if file is not None:
         conversational_agent = ChatWithCSVAgent()
