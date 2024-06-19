@@ -1,6 +1,13 @@
 import streamlit as st
 import sys
 import warnings
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
+
 
 # Suppress warnings
 warnings.filterwarnings("ignore")
@@ -11,14 +18,14 @@ from langchain_experimental.agents.agent_toolkits import create_csv_agent
 
 from langchain.agents.agent_types import AgentType
 #Add OPEN_API_KEY below
-llm = OpenAI(temperature=0, openai_api_key='OPENAI_API_KEY')
+llm = OpenAI(temperature=0, openai_api_key=os.environ.get("OPENAI_API_KEY"))
 # Define the ChatWithCSVAgent class
 class ChatWithCSVAgent:
     def __init__(self):
         self.agent = create_csv_agent(
             llm,
             #Provide path to your data below
-            "PATH TO YOUR CSV",
+            "./structuredData/titanic.csv",
             verbose=True,
             agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
             allow_dangerous_code=True,
@@ -36,7 +43,7 @@ def main():
         st.session_state["chat_history"] = []
         st.write("App refreshed!")
 
-    file = 'PATH TO YOUR CSV'
+    file = './structuredData/titanic.csv'
     #file = st.file_uploader("Upload your csv file", type=["csv"])
     if file is not None:
         conversational_agent = ChatWithCSVAgent()
