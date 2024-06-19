@@ -1,6 +1,7 @@
 # RAG-Integra
 Basic RAG based chatbot which uses a custom knowledge base to improve the results.
 
+* Create two new folders, one for `images` and one for `audio_files`
 * Add all 'text' based files into **data** folder
 * Add 'csv/xlsx' files into **structuredData** folder [Make sure to use the copy of the file]
 * Run `conda create --name <env> --file reqs.txt` to install all required libraries [Having installed **anaconda** or **miniconda** on your PC]
