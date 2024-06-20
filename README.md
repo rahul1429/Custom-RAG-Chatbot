@@ -8,4 +8,4 @@ Basic RAG based chatbot which uses a custom knowledge base to improve the result
 * To run **csvChat.py** use this `streamlit run csvChat.py`
 * To run **UnstructuredRAG.py** use this `python UnstructuredRAG.py`
 * Provide 'path' to your data at the respective parts of the code.
-* Add you OPENAI_API_KEY in the **.env** file
+* Add your OPENAI_API_KEY in the **.env** file
