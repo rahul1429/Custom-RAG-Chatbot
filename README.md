@@ -4,7 +4,10 @@ Basic RAG based chatbot which uses a custom knowledge base to improve the result
 * Create three new folders, one for `images`, one for `audio_files` and another for `pdf`
 * Add all 'text' based files into **data** folder
 * Add 'csv/xlsx' files into **structuredData** folder [Make sure to use the copy of the file]
-* Run `conda create -n <environment-name> --file reqs.txt` to install all required libraries [Having installed **anaconda** or **miniconda** on your PC]
+* [Having installed **anaconda** or **miniconda** on your PC]
+          * `conda activate <env>`
+          * `conda install pip`
+          * `pip install -r reqs.txt`
 * If the above code doesn't work for you, then use this -> `pip install pandas llama-index langchain python-dotenv pytesseract whisper openai-whisper streamlit langchain_openai langchain_experimental tabulate`
 * To run **csvChat.py** use this `streamlit run csvChat.py`
 * To run **UnstructuredRAG.py** use this `python UnstructuredRAG.py`
