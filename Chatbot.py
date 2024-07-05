@@ -114,8 +114,6 @@ def generate_custom_response(index, query, chat_history_arr):
     )
     return response.choices[0].message.content
 
-num=0
-
 def unstructuredChat(directory_path, query, chat_history, indexPath, reload):
     if os.path.exists(indexPath):
         if reload=='No':
